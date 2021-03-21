@@ -24,12 +24,20 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="MemeMe" id="uQJ-As-Z3g">
-                                        <barButtonItem key="leftBarButtonItem" image="square.and.arrow.up" catalog="system" id="TE7-r4-Xfs"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="Rgm-7Y-wym"/>
+                                        <barButtonItem key="leftBarButtonItem" image="square.and.arrow.up" catalog="system" id="TE7-r4-Xfs">
+                                            <connections>
+                                                <action selector="shareMeme:" destination="BYZ-38-t0r" id="q66-45-Y8k"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="Rgm-7Y-wym">
+                                            <connections>
+                                                <action selector="resetMeme:" destination="BYZ-38-t0r" id="Z1l-K4-5Ag"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="crI-SP-HFp" userLabel="TopTF">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="crI-SP-HFp" userLabel="TopTF">
                                 <rect key="frame" x="16" y="145" width="382" height="49.5"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
@@ -48,9 +56,17 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iFS-SS-Wcm"/>
-                                    <barButtonItem image="camera" catalog="system" id="iYM-1V-1I7" userLabel="Camera"/>
+                                    <barButtonItem image="camera" catalog="system" id="iYM-1V-1I7" userLabel="Camera">
+                                        <connections>
+                                            <action selector="getImage:" destination="BYZ-38-t0r" id="6eB-jT-pLm"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="48" style="plain" systemItem="fixedSpace" id="jRi-Ot-fSG"/>
-                                    <barButtonItem image="photo.on.rectangle" catalog="system" id="XS9-7E-ZDF" userLabel="Album"/>
+                                    <barButtonItem tag="1" image="photo.on.rectangle" catalog="system" id="XS9-7E-ZDF" userLabel="Album">
+                                        <connections>
+                                            <action selector="getImage:" destination="BYZ-38-t0r" id="5db-H6-nq6"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="06o-OC-IXk"/>
                                 </items>
                             </toolbar>
@@ -65,12 +81,10 @@
                             <constraint firstItem="c2S-6G-HiF" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="IuJ-zA-YmW"/>
                             <constraint firstItem="XAP-7X-Gi1" firstAttribute="top" secondItem="c2S-6G-HiF" secondAttribute="bottom" id="M98-Pw-Ugr"/>
                             <constraint firstItem="qna-P3-oum" firstAttribute="top" secondItem="BDf-PI-tU6" secondAttribute="bottom" constant="54" id="MMz-4A-Rla"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="crI-SP-HFp" secondAttribute="trailing" constant="16" id="Nt8-D7-0kK"/>
                             <constraint firstItem="qna-P3-oum" firstAttribute="top" secondItem="XAP-7X-Gi1" secondAttribute="bottom" id="VFK-S6-xly"/>
                             <constraint firstItem="BDf-PI-tU6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="VMY-Og-tAl"/>
                             <constraint firstItem="crI-SP-HFp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aFp-WD-RF4"/>
                             <constraint firstItem="c2S-6G-HiF" firstAttribute="leading" secondItem="qna-P3-oum" secondAttribute="leading" id="f1l-GV-NAE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BDf-PI-tU6" secondAttribute="trailing" constant="16" id="igh-xp-snq"/>
                             <constraint firstItem="BDf-PI-tU6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kb1-5P-U4W"/>
                             <constraint firstItem="crI-SP-HFp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="l6x-jP-Nxs"/>
                             <constraint firstItem="c2S-6G-HiF" firstAttribute="trailing" secondItem="qna-P3-oum" secondAttribute="trailing" id="m6L-yO-3wb"/>
@@ -78,6 +92,15 @@
                             <constraint firstItem="qna-P3-oum" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="v8a-yL-I1V"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumBtn" destination="XS9-7E-ZDF" id="kXw-FH-gsE"/>
+                        <outlet property="bottomTF" destination="BDf-PI-tU6" id="Keh-94-Hhs"/>
+                        <outlet property="cameraBtn" destination="iYM-1V-1I7" id="NCj-6d-4le"/>
+                        <outlet property="cancelBtn" destination="Rgm-7Y-wym" id="eCN-y0-rAO"/>
+                        <outlet property="imageIV" destination="XAP-7X-Gi1" id="bpT-mE-IHP"/>
+                        <outlet property="shareBtn" destination="TE7-r4-Xfs" id="PUS-D6-qqv"/>
+                        <outlet property="topTF" destination="crI-SP-HFp" id="6Xy-VO-Wfb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
