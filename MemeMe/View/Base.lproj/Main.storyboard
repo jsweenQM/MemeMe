@@ -22,11 +22,21 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="iFS-SS-Wcm"/>
                                     <barButtonItem image="camera" catalog="system" id="iYM-1V-1I7" userLabel="Camera"/>
-                                    <barButtonItem width="32" style="plain" systemItem="fixedSpace" id="jRi-Ot-fSG"/>
+                                    <barButtonItem width="48" style="plain" systemItem="fixedSpace" id="jRi-Ot-fSG"/>
                                     <barButtonItem image="photo.on.rectangle" catalog="system" id="XS9-7E-ZDF" userLabel="Album"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="06o-OC-IXk"/>
                                 </items>
                             </toolbar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c2S-6G-HiF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="uQJ-As-Z3g">
+                                        <barButtonItem key="leftBarButtonItem" image="square.and.arrow.up" catalog="system" id="TE7-r4-Xfs"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="Rgm-7Y-wym"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -40,6 +50,7 @@
     <resources>
         <image name="camera" catalog="system" width="128" height="94"/>
         <image name="photo.on.rectangle" catalog="system" width="128" height="96"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
