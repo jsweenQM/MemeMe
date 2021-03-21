@@ -58,13 +58,29 @@
 			children = (
 				F23441942607C0C50034555F /* AppDelegate.swift */,
 				F23441962607C0C50034555F /* SceneDelegate.swift */,
-				F23441982607C0C50034555F /* ViewController.swift */,
-				F234419A2607C0C50034555F /* Main.storyboard */,
+				F23441A92607C1A70034555F /* View */,
+				F23441AB2607C1CA0034555F /* Controller */,
 				F234419D2607C0C60034555F /* Assets.xcassets */,
-				F234419F2607C0C60034555F /* LaunchScreen.storyboard */,
 				F23441A22607C0C60034555F /* Info.plist */,
 			);
 			path = MemeMe;
+			sourceTree = "<group>";
+		};
+		F23441A92607C1A70034555F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F234419A2607C0C50034555F /* Main.storyboard */,
+				F234419F2607C0C60034555F /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F23441AB2607C1CA0034555F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F23441982607C0C50034555F /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
