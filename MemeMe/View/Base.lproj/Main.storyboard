@@ -98,7 +98,9 @@
                         <outlet property="cameraBtn" destination="iYM-1V-1I7" id="NCj-6d-4le"/>
                         <outlet property="cancelBtn" destination="Rgm-7Y-wym" id="eCN-y0-rAO"/>
                         <outlet property="imageIV" destination="XAP-7X-Gi1" id="bpT-mE-IHP"/>
+                        <outlet property="navBar" destination="c2S-6G-HiF" id="XMo-Gg-Bz3"/>
                         <outlet property="shareBtn" destination="TE7-r4-Xfs" id="PUS-D6-qqv"/>
+                        <outlet property="toolbar" destination="qna-P3-oum" id="jw5-cu-2Cg"/>
                         <outlet property="topTF" destination="crI-SP-HFp" id="6Xy-VO-Wfb"/>
                     </connections>
                 </viewController>
