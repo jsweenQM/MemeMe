@@ -42,6 +42,13 @@ class MemeEditorViewController: UIViewController {
     
     // MARK: - Override methods
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard(_ :)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -144,6 +151,11 @@ class MemeEditorViewController: UIViewController {
         if bottomTF.isEditing {
             view.frame.origin.y = 0
         }
+    }
+    
+    @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        topTF.resignFirstResponder()
+        bottomTF.resignFirstResponder()
     }
     
     func subscribeToKeyboardNotifications() {
