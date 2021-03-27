@@ -9,6 +9,13 @@ import UIKit
 
 class MemeEditorViewController: UIViewController {
     
+    // MARK: Properties
+    
+    var memes: [Meme]! {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.memes
+    }
+    
     // MARK: Outlets
     
     @IBOutlet weak var navBar: UINavigationBar!
@@ -28,6 +35,7 @@ class MemeEditorViewController: UIViewController {
     
     var memedImage: UIImage! = nil
     var meme: Meme? = nil
+    
     
     // MARK: - Meme's Text Attributes
     
@@ -105,10 +113,18 @@ class MemeEditorViewController: UIViewController {
     func saveMeme() -> Meme? {
         let image = imageIV.image ?? UIImage(named: "default")
         let meme = Meme(textTop: topTF.text!, textBottom: bottomTF.text!, imageOriginal: image!, imageEdited: memedImage)
+        // Add to AppDelegate.memes
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.self.reloadInputViews()
         
         return meme
+    }
+    
+    func save() {
+        // Create the meme image
+        let meme = Meme(textTop: topTF.text!, textBottom: bottomTF.text!, imageOriginal: imageIV.image!, imageEdited: memedImage)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
