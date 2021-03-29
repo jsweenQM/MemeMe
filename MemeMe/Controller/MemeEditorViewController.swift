@@ -30,8 +30,8 @@ class MemeEditorViewController: UIViewController {
     
     // MARK: Variables
     
-    let topText = K.textTopDefault
-    let bottomText = K.textBottomDefault
+    let topText = K.MemeImage.textTopDefault
+    let bottomText = K.MemeImage.textBottomDefault
     
     var memedImage: UIImage! = nil
     var meme: Meme? = nil
@@ -62,8 +62,8 @@ class MemeEditorViewController: UIViewController {
         
         subscribeToKeyboardNotifications()
         cameraBtn.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        configureTextField(textField: topTF, text: K.textTopDefault)
-        configureTextField(textField: bottomTF, text: K.textBottomDefault)
+        configureTextField(textField: topTF, text: K.MemeImage.textTopDefault)
+        configureTextField(textField: bottomTF, text: K.MemeImage.textBottomDefault)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -184,8 +184,8 @@ class MemeEditorViewController: UIViewController {
     }
     
     private func resetUI() {
-        configureTextField(textField: topTF, text: K.textTopDefault)
-        configureTextField(textField: bottomTF, text: K.textBottomDefault)
+        configureTextField(textField: topTF, text: K.MemeImage.textTopDefault)
+        configureTextField(textField: bottomTF, text: K.MemeImage.textBottomDefault)
         imageIV.image = nil
         shareBtn.isEnabled = false
     }
