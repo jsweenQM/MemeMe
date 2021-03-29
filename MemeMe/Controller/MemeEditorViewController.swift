@@ -115,6 +115,7 @@ class MemeEditorViewController: UIViewController {
         let meme = Meme(textTop: topTF.text!, textBottom: bottomTF.text!, imageOriginal: image!, imageEdited: memedImage)
         // Add to AppDelegate.memes
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme)
         appDelegate.self.reloadInputViews()
         
         return meme
