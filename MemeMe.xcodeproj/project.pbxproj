@@ -19,6 +19,8 @@
 		F24F63582610E007009292EA /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F63572610E007009292EA /* MemeCollectionViewCell.swift */; };
 		F24F635B2610E35B009292EA /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F635A2610E35B009292EA /* SentMemesCollectionViewController.swift */; };
 		F24F6363261168EC009292EA /* MemeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F6362261168EC009292EA /* MemeDetailViewController.swift */; };
+		F24F636E2614AFD3009292EA /* SentMemesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24F636D2614AFD3009292EA /* SentMemesTableViewController.swift */; };
+		F270D26E261F679900FE52B5 /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F270D26D261F679900FE52B5 /* MemeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		F24F63572610E007009292EA /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		F24F635A2610E35B009292EA /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 		F24F6362261168EC009292EA /* MemeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDetailViewController.swift; sourceTree = "<group>"; };
+		F24F636D2614AFD3009292EA /* SentMemesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMemesTableViewController.swift; sourceTree = "<group>"; };
+		F270D26D261F679900FE52B5 /* MemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				F234419F2607C0C60034555F /* LaunchScreen.storyboard */,
 				F234419A2607C0C50034555F /* Main.storyboard */,
 				F24F63572610E007009292EA /* MemeCollectionViewCell.swift */,
+				F270D26D261F679900FE52B5 /* MemeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,10 +97,10 @@
 		F23441AB2607C1CA0034555F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F23441982607C0C50034555F /* MemeEditorViewController.swift */,
-				F247C4182607E4B2006EFFB3 /* MemeEditorExtensions.swift */,
-				F24F635A2610E35B009292EA /* SentMemesCollectionViewController.swift */,
+				F24F636C2614AF9A009292EA /* MemeEditor */,
 				F24F6362261168EC009292EA /* MemeDetailViewController.swift */,
+				F24F635A2610E35B009292EA /* SentMemesCollectionViewController.swift */,
+				F24F636D2614AFD3009292EA /* SentMemesTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -107,6 +112,15 @@
 				F247C4152607DD80006EFFB3 /* Meme.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F24F636C2614AF9A009292EA /* MemeEditor */ = {
+			isa = PBXGroup;
+			children = (
+				F23441982607C0C50034555F /* MemeEditorViewController.swift */,
+				F247C4182607E4B2006EFFB3 /* MemeEditorExtensions.swift */,
+			);
+			path = MemeEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +196,9 @@
 				F24F6363261168EC009292EA /* MemeDetailViewController.swift in Sources */,
 				F23441992607C0C50034555F /* MemeEditorViewController.swift in Sources */,
 				F23441952607C0C50034555F /* AppDelegate.swift in Sources */,
+				F24F636E2614AFD3009292EA /* SentMemesTableViewController.swift in Sources */,
 				F23441972607C0C50034555F /* SceneDelegate.swift in Sources */,
+				F270D26E261F679900FE52B5 /* MemeTableViewCell.swift in Sources */,
 				F247C4122607DD2F006EFFB3 /* Constants.swift in Sources */,
 				F24F63582610E007009292EA /* MemeCollectionViewCell.swift in Sources */,
 				F247C4192607E4B2006EFFB3 /* MemeEditorExtensions.swift in Sources */,

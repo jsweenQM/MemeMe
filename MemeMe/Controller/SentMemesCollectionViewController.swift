@@ -7,7 +7,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+//private let reuseIdentifier = "Cell"
 
 class SentMemesCollectionViewController: UICollectionViewController {
 
@@ -25,7 +25,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         self.collectionView.reloadData()
     }
     
@@ -35,35 +34,42 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let rtBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(navigateToMemeEditor))
         navigationItem.setRightBarButton(rtBarButtonItem, animated: animated)
         collectionView.reloadData()
+        tabBarController?.tabBar.isHidden = false
     }
 
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        print("Memes count: \(memes.count)")
         return memes.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cell.reuseId, for: indexPath) as! MemeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cell.collectionViewReuseId, for: indexPath) as! MemeCollectionViewCell
     
         // Configure the cell
         if let image = cell.imageView {
             image.image = memes[indexPath.row].imageEdited
         }
+        let imageView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 128, height: 256))
+        let image: UIImage = memes[indexPath.row].imageEdited
+        imageView.image = image
+        cell.contentView.addSubview(imageView)
+        
+        
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let memeDetailVC
+        let memeDetailVC = storyboard!.instantiateViewController(identifier: K.VC.detailMemeId) as! MemeDetailViewController
+        memeDetailVC.detailMeme = memes[indexPath.row]
+        navigationController!.pushViewController(memeDetailVC, animated: true)
     }
 
     // MARK: Navigation
     
     @objc func navigateToMemeEditor() {
         let memeEditorViewController = storyboard?.instantiateViewController(identifier: K.VC.editMemeId) as! MemeEditorViewController
-        self.present(memeEditorViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(memeEditorViewController, animated: true)
     }
 
 }

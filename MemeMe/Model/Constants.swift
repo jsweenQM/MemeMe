@@ -24,10 +24,12 @@ struct K {
     }
     
     struct Cell {
-        static let reuseId = "MemeCollectionViewCell"
+        static let collectionViewReuseId = "MemeCollectionViewCell"
+        static let tableViewReuseId = "MemeTableViewCell"
     }
     
     struct VC {
+        static let detailMemeId = "MemeDetailViewController"
         static let editMemeId = "MemeEditorViewController"
     }
 }

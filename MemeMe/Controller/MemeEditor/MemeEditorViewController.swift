@@ -7,6 +7,8 @@
 
 import UIKit
 
+// TODO: Find how to only save the memed image from top of black to bottom of black
+
 class MemeEditorViewController: UIViewController {
     
     // MARK: Properties
@@ -119,13 +121,6 @@ class MemeEditorViewController: UIViewController {
         appDelegate.self.reloadInputViews()
         
         return meme
-    }
-    
-    func save() {
-        // Create the meme image
-        let meme = Meme(textTop: topTF.text!, textBottom: bottomTF.text!, imageOriginal: imageIV.image!, imageEdited: memedImage)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
