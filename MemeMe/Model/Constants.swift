@@ -28,6 +28,10 @@ struct K {
         static let tableViewReuseId = "MemeTableViewCell"
     }
     
+    struct Segue {
+        static let DetailMeme = "ShowDetailMeme"
+    }
+    
     struct VC {
         static let detailMemeId = "MemeDetailViewController"
         static let editMemeId = "MemeEditorViewController"
