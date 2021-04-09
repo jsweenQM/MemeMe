@@ -7,8 +7,6 @@
 
 import UIKit
 
-//private let reuseIdentifier = "Cell"
-
 class SentMemesCollectionViewController: UICollectionViewController {
 
     // MARK: Properties
@@ -45,16 +43,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: K.Cell.collectionViewReuseId, for: indexPath) as! MemeCollectionViewCell
-    
-        // Configure the cell
-        if let image = cell.imageView {
-            image.image = memes[indexPath.row].imageEdited
-        }
-        let imageView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 128, height: 256))
-        let image: UIImage = memes[indexPath.row].imageEdited
-        imageView.image = image
-        cell.contentView.addSubview(imageView)
-        
+        let meme = memes[(indexPath as NSIndexPath).row]
+        cell.imageView?.image = meme.imageEdited
         
         return cell
     }
