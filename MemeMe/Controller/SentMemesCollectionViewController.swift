@@ -18,12 +18,14 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
+    // MARK: Methods
+    
     // MARK: Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.collectionView.reloadData()
+        setCellDimensions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +35,16 @@ class SentMemesCollectionViewController: UICollectionViewController {
         navigationItem.setRightBarButton(rtBarButtonItem, animated: animated)
         collectionView.reloadData()
         tabBarController?.tabBar.isHidden = false
+    }
+
+    // MARK: UI
+    
+    fileprivate func setCellDimensions() {
+        let space: CGFloat = 3.0
+        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: dimension)
     }
 
     // MARK: UICollectionViewDataSource
