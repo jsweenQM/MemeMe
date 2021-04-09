@@ -4,16 +4,20 @@
 [![Swift Version][swift-image]][swift-url]
 [![License][license-image]][license-url]
 
-This is MemeMe version 1.0 for Udacity's Nanodegree Track. Create memes with your camera or from your photo library then share with friends!
+This is MemeMe version 2.0 for Udacity's Nanodegree Track. Create memes with your camera or from your photo library then share with friends! 
 
 ![](screenshot.png)
+
+# Release Notes
+1. Added Table and Collection Views
+2. Added Detail Screen
 
 ## Requirements 
 - iOS 14.4.1+
 - Xcode 9.3+
 
 ## Installation
-1. Download and drop ```MemeMe.swift``` in your project.  
+1. Download and drop ```MemeMe.swift``` into your project.  
 
 [swift-image]:https://img.shields.io/badge/swift-5.0-orange.svg
 [swift-url]: https://swift.org/
